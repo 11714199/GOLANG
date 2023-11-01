@@ -18,12 +18,16 @@ var info = []data{
 }
 
 func getData(c *gin.Context) {
-	fmt.Println()
+	fmt.Println(c)
 	c.IndentedJSON(http.StatusOK, info)
+}
+
+func addData(c *gin.Context) {
+
 }
 
 func main() {
 	router := gin.Default()
 	router.GET("/getData", getData)
-	router.Run("localhost:8080")
+	router.Run("localhost:8000")
 }
